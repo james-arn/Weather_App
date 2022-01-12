@@ -20,5 +20,69 @@
   right: 200px;
   top: 810px;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(1px);
+  overflow: hidden;
+  padding: 3px;
+}
+
+.searchInput > input {
+  font-size: 25px;
+  width: 395px;
+  font-size: 40px;
+  padding: 5px;
+  border: none;
+  outline: none;
+  color: white;
+  background: transparent;
+}
+
+.searchInput > input::placeholder {
+  color: white;
+}
+
+.searchIcon {
+  cursor: pointer;
+  transform: scale(1.2);
+  margin-right: 10px;
+}
+
+.searchIcon:hover {
+  transform: scale(1.4);
+}
+
+.weatherContainer > h2 {
+  position: absolute;
+  font-size: 64px;
+  top: 870px;
+  left: 73px;
+}
+
+.topPart {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  left: 73px;
+  top: 673px;
+}
+
+.topPart > h1 {
+  font-size: 100px;
+}
+
+.conditionHighLow {
+  margin-left: 25px;
+}
+
+.conditionHighLow > h1:nth-of-type(1) {
+  font-size: 64px;
+}
+
+.conditionHighLow > h1:nth-of-type(2),
+h1:nth-of-type(3) {
+  font-size: 36px;
 }

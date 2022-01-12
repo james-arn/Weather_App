@@ -1,11 +1,13 @@
-export const fetchData = async (place, setPlaceInfo) => {
+export const fetchData = async (place, setPlace, setPlaceInfo, placeInfo) => {
   try {
     const fetchedData = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=3cfb575d3de2436a91173540221101&q=${place}&days=1&aqi=no&alerts=no`
+      `${process.env.REACT_APP_WEATHER_API_KEY}&q=${place}&days=1&aqi=no&alerts=no`
     );
     if (fetchedData.status !== 200)
       throw new Error(`${fetchedData.status} - ${fetchedData.statusText}`);
     const res = await fetchedData.json();
+    console.log("res", res);
+
     setPlaceInfo({
       name: res.location.name,
       country: res.location.country,
@@ -16,6 +18,7 @@ export const fetchData = async (place, setPlaceInfo) => {
       },
       condition: res.current.condition.text,
     });
+    console.log("placeInfo", placeInfo);
     return res;
   } catch (err) {
     console.error(`💥💥 ${err.message}`);

@@ -12,11 +12,11 @@ import SearchIcon from "@mui/icons-material/Search";
 
 function App() {
   const [place, setPlace] = useState("Newquay"); // stores input value on location in search bar.
-  const [placeInfo, setPlaceInfo] = useState(""); //useState to store data from API
+  const [placeInfo, setPlaceInfo] = useState({}); //useState to store data from API
 
   //fetches API data on load.
   useEffect(() => {
-    fetchData(place, setPlaceInfo);
+    fetchData(place, setPlace, setPlaceInfo, placeInfo);
   }, []);
 
   return (
