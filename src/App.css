@@ -9,6 +9,11 @@
   color: white;
   transition-duration: 1s;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: auto;
 }
 
 .searchInput {
@@ -16,14 +21,11 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  position: absolute;
-  right: 200px;
-  top: 810px;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(5px);
   overflow: hidden;
   padding: 3px;
 }
@@ -53,36 +55,40 @@
   transform: scale(1.4);
 }
 
-.weatherContainer > h2 {
-  position: absolute;
-  font-size: 64px;
-  top: 870px;
-  left: 73px;
+.weatherContainer {
+  margin-bottom: 10px;
 }
 
 .topPart {
-  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
-  left: 73px;
-  top: 673px;
+  flex-direction: column;
+  text-align: center;
 }
 
-.topPart > h1 {
-  font-size: 100px;
+.condition {
+  font-size: 50px;
 }
 
-.conditionHighLow {
-  margin-left: 25px;
+.nameCountry {
+  font-size: 25px;
 }
 
-.conditionHighLow > h1:nth-of-type(1) {
-  font-size: 64px;
-}
+@media all and (max-width: 800px) {
+  .condition {
+    font-size: 30px;
+  }
 
-.conditionHighLow > h1:nth-of-type(2),
-h1:nth-of-type(3) {
-  font-size: 36px;
-}
+  .highLow {
+    font-size: 15px;
+  }
+
+  .nameCountry {
+    font-size: 15px;
+  }
+
+  .searchInput {
+    transform: scale(0.7);
+  }
+} ;

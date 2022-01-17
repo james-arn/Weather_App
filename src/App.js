@@ -62,6 +62,26 @@ function App() {
           : { backgroundImage: `url(${Overcast})` }
       }
     >
+      <div className="weatherContainer">
+        <div className="topPart">
+          <div className="condition">
+            <h1>
+              {placeInfo.condition} {placeInfo.centigrade?.current}°C{" "}
+            </h1>
+          </div>
+          <div className="highLow">
+            <h1>
+              (High: {placeInfo.centigrade?.high}
+              °C, Low: {placeInfo.centigrade?.low}°C)
+            </h1>
+          </div>
+          <div className="nameCountry">
+            <h2>
+              {placeInfo.name}, {placeInfo.country}
+            </h2>
+          </div>
+        </div>
+      </div>
       <div className="searchInput">
         <input
           type="text"
@@ -71,19 +91,6 @@ function App() {
         <SearchIcon onClick={fetchData} fontSize="large" className="searchIcon">
           Search
         </SearchIcon>
-      </div>
-      <div className="weatherContainer">
-        <div className="topPart">
-          <h1>{placeInfo.centigrade?.current}°C</h1>
-          <div className="conditionHighLow">
-            <h1>{placeInfo.condition}</h1>
-            <h1>{placeInfo.centigrade?.high}°C</h1>
-            <h1>{placeInfo.centigrade?.low}°C</h1>
-          </div>
-        </div>
-        <h2>
-          {placeInfo.name}, {placeInfo.country}
-        </h2>
       </div>
     </div>
   );
